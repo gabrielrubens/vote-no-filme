@@ -9,7 +9,7 @@ import org.junit.Test;
 public class DisputaTest {
 
 	@Test
-	public void test() {
+	public void deveTer10DisputasDos5Filmes() {
 		Disputa disputa = new Disputa(new Combinacao(Arrays.asList(1L, 2L, 3L, 4L, 5L), 2));
 		Candidatos candidatos = null;
 		
