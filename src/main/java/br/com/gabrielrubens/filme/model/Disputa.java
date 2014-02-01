@@ -1,17 +1,19 @@
 package br.com.gabrielrubens.filme.model;
 
-import java.util.Arrays;
+import br.com.gabrielrubens.filme.repository.FilmeRepository;
 
 
 public class Disputa {
 	private final Combinacao combinacao;
-
 	
-	public Disputa() {
-		this.combinacao = new Combinacao(Arrays.asList(1L, 2L, 3L, 4L, 5L), 2);
+	public Disputa(final FilmeRepository filmeRepository) {
+		this.combinacao = new Combinacao(filmeRepository.findIds(), 2);
 	}
 	
-
+	@SuppressWarnings("unused")
+	private Disputa() {
+		this(null);
+	}
 	public boolean temCandidatos() {
 		return combinacao.hasNext();
 	}
