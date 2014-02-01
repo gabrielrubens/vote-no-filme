@@ -1,37 +1,33 @@
 package br.com.gabrielrubens.filme.controller;
 
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.Mockito.when;
+
+import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import br.com.caelum.vraptor.util.test.MockResult;
 import br.com.gabrielrubens.filme.model.Candidatos;
+import br.com.gabrielrubens.filme.model.Combinacao;
 import br.com.gabrielrubens.filme.model.Disputa;
-import br.com.gabrielrubens.filme.model.Filme;
 
 public class VotoControllerTest {
 	private MockResult result;
 	private VotoController controller;
-	@Mock private Disputa disputa;
-	private Candidatos candidatos;
+	private Disputa disputa;
 	
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
+		result = new MockResult();
+		disputa = new Disputa(new Combinacao(Arrays.asList(1L, 2L, 3L, 4L, 5L), 2));
 		controller = new VotoController(result, disputa);
-		candidatos = new Candidatos(new Filme(1L, "Filme 1"), new Filme(2L, "Filme 2"));
 	}
 
 	@Test
 	public void deveApresentarOsCondidatos() {
-		when(disputa.proximosCandidatos()).thenReturn(candidatos);
-		
-		when(disputa.temCandidatos()).thenReturn(true);
-		
 		controller.index();
 		Candidatos candidatos = result.included("candidatos");
 		assertNotNull(candidatos);
