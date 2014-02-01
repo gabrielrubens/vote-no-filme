@@ -16,7 +16,7 @@ import java.util.List;
  * 
  */
 
-class Combinacao implements Iterator<Long[]> {
+public class Combinacao implements Iterator<Long[]> {
 	private int qtdDeCombinacoes;
 	private List<Long> entrada;
 	private int MAX;
@@ -26,7 +26,7 @@ class Combinacao implements Iterator<Long[]> {
 	 * se qtdDeCombinacoes e' zero entao iremos fazer todas as combinacoes (com qualquer
 	 * quantidade de elementos).
 	 */
-	protected Combinacao(List<Long> entrada, int qtdDeCombinacoes) {
+	public Combinacao(List<Long> entrada, int qtdDeCombinacoes) {
 		this.qtdDeCombinacoes = qtdDeCombinacoes;
 		this.entrada = entrada;
 		this.MAX = ~(1 << entrada.size());

@@ -1,12 +1,12 @@
 package br.com.gabrielrubens.filme.model;
 
-import java.util.Arrays;
+import java.util.Iterator;
 
 public class Disputa {
-	private Combinacao combinacao;
+	private Iterator<Long[]> combinacao;
 
-	public Disputa() {
-		combinacao = new Combinacao(Arrays.asList(1L, 2L, 3L, 4L, 5L), 2);
+	public Disputa(Iterator<Long[]> combinacao) {
+		this.combinacao = combinacao;
 	}
 
 	public boolean temCandidatos() {
