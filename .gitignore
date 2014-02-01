@@ -1,6 +1,18 @@
 *.class
+out
+.classpath
+.project
+.settings
+.metadata
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+
+src/main/webapp/WEB-INF/classes/*
+lib/*
+src/main/webapp/WEB-INF/lib/*
+target/*
+target/**/*
