@@ -1,7 +1,15 @@
 package br.com.gabrielrubens.filme.repositorio;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.junit.After;
 import org.junit.AfterClass;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -23,12 +31,18 @@ public class FilmeRepositoryImplTest{
 	@Before
 	public void before(){
 		DBUnitHelper.before();
-		filmeRepositoryImpl = new FilmeRepositoryImpl(DBUnitHelper.getEntityManager());
+		EntityManager entityManager = DBUnitHelper.getEntityManager();
+		filmeRepositoryImpl = new FilmeRepositoryImpl(entityManager);
 	}
 	
 	@AfterClass
 	public static void afterClass(){
 		DBUnitHelper.afterClass();
+	}
+	
+	@After
+	public void after(){
+		DBUnitHelper.after();
 	}
 	
 	@Test
@@ -38,7 +52,18 @@ public class FilmeRepositoryImplTest{
 	
 	@Test
 	public void deveRetornar2FilmesPorId() {
-		assertNotNull(filmeRepositoryImpl.find(1L));
-		assertNotNull(filmeRepositoryImpl.find(2L));
+		assertNotNull(filmeRepositoryImpl.findById(1L));
+		assertNotNull(filmeRepositoryImpl.findById(2L));
+	}
+	
+	@Test
+	public void deveInserirUmFilme(){
+		List<Filme> filmes = new ArrayList<>();
+		
+		for(int i=0; i<5; i++){
+			filmes.add(new Filme("Nome " + i));
+		}
+		filmeRepositoryImpl.removeAll();
+		filmeRepositoryImpl.insertAll(filmes);
 	}
 }
