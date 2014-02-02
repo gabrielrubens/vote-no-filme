@@ -52,7 +52,8 @@ public class DBUnitHelper {
 	}
 	
 	public static void before(){
-		try {	
+		entityManager.getTransaction().begin();
+		try {
 			for (IDataSet data : datasets) {
 				DatabaseOperation.CLEAN_INSERT.execute(connection, data);
 			}
@@ -63,5 +64,9 @@ public class DBUnitHelper {
 
 	public static EntityManager getEntityManager() {
 		return entityManager;
+	}
+
+	public static void after() {
+		entityManager.getTransaction().rollback();
 	}
 }
