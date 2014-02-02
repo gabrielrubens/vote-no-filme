@@ -6,12 +6,12 @@ import java.lang.reflect.ParameterizedType;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-public abstract class Repository<T, I extends Serializable> {
+abstract class Repository<T, I extends Serializable> {
 	protected EntityManager entityManager;
-	protected Class<T> clazz;
+	private Class<T> clazz;
     
     @Deprecated
-    public Repository(){
+    private Repository(){
     }
     
     @Inject
