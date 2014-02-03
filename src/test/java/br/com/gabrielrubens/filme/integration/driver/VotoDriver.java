@@ -20,11 +20,21 @@ public class VotoDriver {
 
 	public void deveApresentarOsCondidatos() {
 		
-		WebElement form = browser.findElement(By.id("formVotos"));
+		WebElement form = getForm();
 		
 		assertTrue(form.findElement(By.id("btnFilme1")).isDisplayed());
 		assertTrue(form.findElement(By.id("btnFilme2")).isDisplayed());
 
 		//assertThat(msg.getText(), containsString(mensagem));
+	}
+
+	public void votar() {
+		WebElement form = getForm();
+		form.findElement(By.id("btnFilme1")).click();
+	}
+	
+	private WebElement getForm() {
+		WebElement form = browser.findElement(By.id("formVotos"));
+		return form;
 	}
 }

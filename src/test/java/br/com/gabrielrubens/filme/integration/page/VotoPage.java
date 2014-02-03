@@ -26,11 +26,17 @@ public class VotoPage {
 
 	@AfterClass
 	public static void teardown() {
-		browser.close();
+		//browser.close();
+	}
+	
+	//@Test
+	public void naTelaInicialDeveAparacerDoisFilmesParaVoto(){
+		voto.deveApresentarOsCondidatos();
 	}
 	
 	@Test
-	public void naTelaInicialDeveAparacerDoisFilmesParaVoto(){
+	public void deveVotarEmUmFilme(){
+		voto.votar();
 		voto.deveApresentarOsCondidatos();
 	}
 }
