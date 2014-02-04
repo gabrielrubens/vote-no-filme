@@ -34,6 +34,7 @@ public class VotoController {
 		incluirProximoCandidato();
 	}
 
+	@Path("/voto/votar")
 	public void votar(Candidatos candidatos, Filme filmeVotado) {
 		repository.votar(new Voto(candidatos, filmeVotado));
 		if(incluirProximoCandidato()){

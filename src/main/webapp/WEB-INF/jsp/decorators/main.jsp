@@ -21,6 +21,8 @@
     <decorator:body/>
     <%-- <script src="${jsDir}/jquery.min.js"></script> --%>
 	<script src="${bootstrap}/js/jquery-1.10.2.js"></script>
+	<script src="${jsDir}/app.js"></script>
+	<script src="${jsDir}/voto.js"></script>
 	<script src="${bootstrap}/js/bootstrap.js"></script>
   </body>
 </html>
