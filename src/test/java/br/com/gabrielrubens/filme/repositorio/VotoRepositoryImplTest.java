@@ -18,7 +18,7 @@ public class VotoRepositoryImplTest{
 
 	@BeforeClass
 	public static void beforeClass() throws Exception{
-		DBUnitHelper.beforeClass(Filme.class);
+		DBUnitHelper.beforeClass(Filme.class, Voto.class);
 	}
 
 	@Before
@@ -46,5 +46,10 @@ public class VotoRepositoryImplTest{
 		
 		
 		repository.votar(voto);
+	}
+	
+	@Test
+	public void devRemoverTodosOsVotos(){
+		repository.removeAll();
 	}
 }
