@@ -4,10 +4,11 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.Arrays;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
 import org.mockito.MockitoAnnotations;
 
 import br.com.caelum.vraptor.util.test.MockResult;
@@ -29,8 +30,8 @@ public class VotoControllerTest {
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 		result = new MockResult();
-		Mockito.when(filmeRepository.findIds()).thenReturn(Arrays.asList(1L,2L,3L,4L,5L));
-		Mockito.when(filmeRepository.findById(Mockito.anyLong())).thenReturn(new Filme(""));
+		when(filmeRepository.findIds()).thenReturn(Arrays.asList(1L,2L,3L,4L,5L));
+		when(filmeRepository.findById(anyLong())).thenReturn(new Filme(""));
 		disputa = new Disputa(filmeRepository);
 		disputa.init();
 		controller = new VotoController(result, disputa, votoRepository);
@@ -50,8 +51,25 @@ public class VotoControllerTest {
 		
 		controller.votar(candidatos, filme1);
 		
-		Mockito.verify(votoRepository).votar(Mockito.any(Voto.class));
+		verify(votoRepository).votar(any(Voto.class));
 		verificaSeHaCandidatosNoResult();
+	}
+	
+	@Test
+	public void deveVotarNoUltimoDuelo() throws Exception{
+		Filme filme1 = new Filme(1L, "Filme 1");
+		Filme filme2 = new Filme(2L, "Filme 2");
+		Candidatos candidatos = new Candidatos(filme1, filme2);
+		disputa = spy(disputa);
+		
+		when(disputa.temCandidatos()).thenReturn(false);
+		controller = new VotoController(result, disputa, votoRepository);
+		
+		controller.votar(candidatos, filme1);
+		
+		verify(votoRepository).votar(any(Voto.class));
+		verify(spy(controller),  never()).index();
+		Assert.assertTrue(result.included("candidatos") == null);
 	}
 	
 	private void verificaSeHaCandidatosNoResult() {
