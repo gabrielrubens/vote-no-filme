@@ -23,7 +23,7 @@ abstract class Repository<T, I extends Serializable> {
         this.clazz = clazz;
     }
     
-	public T find(I id) {
+	public T findById(I id) {
 		return (T) entityManager.find(clazz, id);
 	}
 }

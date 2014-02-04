@@ -1,5 +1,6 @@
 package br.com.gabrielrubens.filme.model;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * 
  */
 
-public class Combinacao implements Iterator<Long[]> {
+public class Combinacao implements Iterator<Long[]>, Serializable{
 	private int qtdDeCombinacoes;
 	private List<Long> entrada;
 	private int MAX;
@@ -33,6 +34,9 @@ public class Combinacao implements Iterator<Long[]> {
 		this.N = 1;
 	}
 
+	public Combinacao() {
+	}
+	
 	/**
 	 * Retorna true quando ha pelo menos uma combinacao disponivel.
 	 */

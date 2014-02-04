@@ -1,5 +1,6 @@
 package br.com.gabrielrubens.filme.repository;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import javax.persistence.TypedQuery;
 import br.com.gabrielrubens.filme.model.Filme;
 
 public class FilmeRepositoryImpl extends Repository<Filme, Long> implements
-		FilmeRepository {
+		FilmeRepository, Serializable {
 
 	@Inject
 	public FilmeRepositoryImpl(EntityManager entityManager) {
@@ -28,10 +29,6 @@ public class FilmeRepositoryImpl extends Repository<Filme, Long> implements
 		return resultList;
 	}
 	
-	public Filme findById(Long id) {
-		return entityManager.find(Filme.class, id);
-	}
-
 	public void insertAll(Collection<Filme> filmes) {
 		for (Filme filme : filmes) {
 			entityManager.persist(filme);

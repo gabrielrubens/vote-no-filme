@@ -17,8 +17,8 @@ public class Filme implements Serializable {
 	@SuppressWarnings("unused")
 	private Filme() {}
 	
-	public Filme(Long Id, String nome) {
-		this.id = Id;
+	public Filme(Long id, String nome) {
+		this.id = id;
 		this.nome = nome;
 	}
 	
@@ -29,11 +29,15 @@ public class Filme implements Serializable {
 	public Long getId() {
 		return id;
 	}
-	
+	public void setId(Long id) {
+		this.id = id;
+	}	
 	public String getNome() {
 		return nome;
 	}
-
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	public String toString() {
 		return "Filme [id=" + id + ", nome=" + nome + "]";
 	}

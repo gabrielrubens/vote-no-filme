@@ -13,10 +13,18 @@ public class Candidatos {
 		return filme1;
 	}
 
+	public void setFilme1(Filme filme1) {
+		this.filme1 = filme1;
+	}
+	
 	public Filme getFilme2() {
 		return filme2;
 	}
 
+	public void setFilme2(Filme filme2) {
+		this.filme2 = filme2;
+	}
+	
 	public String toString() {
 		return "Candidatos [filme1=" + filme1 + ", filme2=" + filme2 + "]";
 	}
