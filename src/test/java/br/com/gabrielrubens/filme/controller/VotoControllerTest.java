@@ -30,7 +30,9 @@ public class VotoControllerTest {
 		MockitoAnnotations.initMocks(this);
 		result = new MockResult();
 		Mockito.when(filmeRepository.findIds()).thenReturn(Arrays.asList(1L,2L,3L,4L,5L));
+		Mockito.when(filmeRepository.findById(Mockito.anyLong())).thenReturn(new Filme(""));
 		disputa = new Disputa(filmeRepository);
+		disputa.init();
 		controller = new VotoController(result, disputa, votoRepository);
 	}
 

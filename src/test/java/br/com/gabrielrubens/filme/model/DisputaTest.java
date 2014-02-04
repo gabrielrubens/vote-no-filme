@@ -14,11 +14,12 @@ import br.com.gabrielrubens.filme.repository.FilmeRepository;
 public class DisputaTest {
 
 	@Test
-	public void deveTer10DisputasDos5Filmes() {
+	public void deveTer10DisputasDos5Filmes() throws Exception {
 		FilmeRepository filmeRepository = Mockito.mock(FilmeRepository.class);
 		Mockito.when(filmeRepository.findIds()).thenReturn(Arrays.asList(1L,2L,3L,4L,5L));
 
 		Disputa disputa = new Disputa(filmeRepository);
+		disputa.init();
 		Candidatos candidatos = null;
 		
 		for(int i = 0; i < 10; i++) {
