@@ -13,10 +13,6 @@ public class VotoRepositoryImpl extends Repository<Voto, Long> implements
 		super(entityManager);
 	}
 	
-	public VotoRepositoryImpl() {
-		this(null);
-	}
-
 	@Override
 	public void votar(Voto voto) {
 		entityManager.persist(voto);

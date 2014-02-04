@@ -18,10 +18,6 @@ public class FilmeRepositoryImpl extends Repository<Filme, Long> implements
 		super(entityManager);
 	}
 	
-	public FilmeRepositoryImpl() {
-		this(null);
-	}
-
 	public List<Long> findIds() {
 		TypedQuery<Long> query = entityManager.createQuery(
 				"SELECT f.id FROM Filme f", Long.class);
