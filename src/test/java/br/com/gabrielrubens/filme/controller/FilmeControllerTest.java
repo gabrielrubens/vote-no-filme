@@ -24,6 +24,7 @@ public class FilmeControllerTest {
 		FilmeController controller = new FilmeController(result, votoRepository, filmeRepository);
 		controller.inserirBaseDeTeste();
 		
+		verify(votoRepository).removeAll();
 		verify(filmeRepository).removeAll();
 		verify(filmeRepository).insertAll(anyCollectionOf(Filme.class));
 		Assert.assertEquals("Filmes incluidos com sucesso!", result.included("mensagem"));
