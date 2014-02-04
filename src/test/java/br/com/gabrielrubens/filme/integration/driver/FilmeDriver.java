@@ -1,5 +1,7 @@
 package br.com.gabrielrubens.filme.integration.driver;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +17,8 @@ public class FilmeDriver {
 
 	public void deveIrNaUrlDeInserirFilmesDeTeste() {
 		browser.get(URL_BASE+"filme/inserirBaseDeTeste");
+		
+		browser.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
 		Assert.assertEquals("Filmes incluidos com sucesso!", browser.findElement(By.id("mensagem")).getText());
 	}
