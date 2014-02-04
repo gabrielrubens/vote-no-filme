@@ -21,4 +21,9 @@ public class VotoRepositoryImpl extends Repository<Voto, Long> implements
 	public void votar(Voto voto) {
 		entityManager.persist(voto);
 	}
+
+	@Override
+	public void removeAll() {
+		entityManager.createQuery("delete from Voto").executeUpdate();
+	}
 }

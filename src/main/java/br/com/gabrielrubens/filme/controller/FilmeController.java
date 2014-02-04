@@ -10,24 +10,28 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.gabrielrubens.filme.model.Filme;
 import br.com.gabrielrubens.filme.repository.FilmeRepository;
+import br.com.gabrielrubens.filme.repository.VotoRepository;
 
 @Controller
 public class FilmeController {
 	private final FilmeRepository filmeRepository;
 	private final Result result;
+	private VotoRepository votoRepository;
 	
 	@Inject
-	public FilmeController(Result result, FilmeRepository filmeRepository) {
+	public FilmeController(Result result, VotoRepository votoRepository, FilmeRepository filmeRepository) {
 		this.result = result;
+		this.votoRepository = votoRepository;
 		this.filmeRepository = filmeRepository;
 	}
 	
 	public  FilmeController() {
-		this(null, null);
+		this(null, null, null);
 	}
 	
-	@Path("filme/inserirBaseDeTeste")
+	@Path(value={"/filme/inserirBaseDeTeste", "/x"})
 	public void inserirBaseDeTeste() {
+		votoRepository.removeAll();
 		filmeRepository.removeAll();
 
 		filmeRepository.insertAll(criarFilmesParaTeste());

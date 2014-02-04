@@ -4,4 +4,5 @@ import br.com.gabrielrubens.filme.model.Voto;
 
 public interface VotoRepository {
 	void votar(Voto voto);
+	void removeAll();
 }
