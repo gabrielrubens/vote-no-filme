@@ -30,7 +30,7 @@ public class DBUnitHelper {
 			entityManager = entityManagerFactory.createEntityManager();
 			connection = new DatabaseConnection(((SessionImpl) (entityManager.getDelegate())).connection());
 			connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new HsqldbDataTypeFactory());
-	
+			connection.getConnection().prepareStatement("SET DATABASE REFERENTIAL INTEGRITY FALSE").execute();
 			FlatXmlDataSetBuilder flatXmlDataSetBuilder = new FlatXmlDataSetBuilder();
 			flatXmlDataSetBuilder.setColumnSensing(true);
 			ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
@@ -55,6 +55,7 @@ public class DBUnitHelper {
 		entityManager.getTransaction().begin();
 		try {
 			for (IDataSet data : datasets) {
+				//DatabaseOperation.DELETE_ALL.execute(connection, data);
 				DatabaseOperation.CLEAN_INSERT.execute(connection, data);
 			}
 		} catch (Exception e) {
