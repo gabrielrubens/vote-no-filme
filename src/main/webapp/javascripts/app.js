@@ -4,4 +4,8 @@
 		Voto.votar($('#formVotos'), this, $('#filmeVotado'));
 	});
 
+	$('#btnSalvarUsuario').click(function(){
+		Voto.ranking();
+	});
+	
 })(jQuery);

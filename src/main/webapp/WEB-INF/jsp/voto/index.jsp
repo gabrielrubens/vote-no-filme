@@ -11,9 +11,10 @@
 
     <div class="container">
 		<form action="voto/votar" method="post" id="formVotos">
-			<input type="hidden" name="candidatos.filme1.id" value="${candidatos.filme1.id}"/>
-			<input type="hidden" name="candidatos.filme2.id" value="${candidatos.filme2.id}"/>
+			<input type="hidden" name="candidatos.filme1.id" id="candidatos.filme1.id"  value="${candidatos.filme1.id}"/>
+			<input type="hidden" name="candidatos.filme2.id" id="candidatos.filme2.id"  value="${candidatos.filme2.id}"/>
 			<input type="hidden" id="filmeVotado" name="filmeVotado.id" value=""/>
+			<input type="hidden" id="temCandidatos" name="temCandidatos" value="${temCandidatos}"/>
 		
 	        <div class="row">
 	
@@ -28,29 +29,47 @@
 	        <div class="row">
 	
 	            <div class="col-lg-6 col-md-6 portfolio-item">
-	                <img class="img-responsive img-thumbnail" src="http://placehold.it/300x350">
-	                <h3>${candidatos.filme1.nome}</h3>
+	                <img id="idImgFilme1" class="img-responsive img-thumbnail" src="http://placehold.it/300x350">
+	                <h3 id="idNmFilme1">${candidatos.filme1.nome}</h3>
 	                <button type="button" id="btnFilme1" class="btn btn-success btn-lg" data-filme="${candidatos.filme1.id}">Votar</button>
 	            </div>
 	
 	            <div class="col-lg-6 col-md-6 portfolio-item">
-	                <img class="img-responsive img-thumbnail" src="http://placehold.it/300x350">
-	                <h3>${candidatos.filme2.nome}</h3>
-	                <%-- <a href="${linkTo[VotoController].votar(candidatos, candidatos.filme2.id)}" class="btn btn-primary btn-lg active" role="button">Votar</a> --%>
-	                <a href="${linkTo[VotoController].votar(candidatos, candidatos.filme2)}">votar</a>
+	                <img id="idImgFilme2" class="img-responsive img-thumbnail" src="http://placehold.it/300x350">
+	                <h3 id="idNmFilme2">${candidatos.filme2.nome}</h3>
 	                <button type="button" id="btnFilme2" class="btn btn-success btn-lg" data-filme="${candidatos.filme2.id}">Votar</button>
 	            </div>
 	
 	        </div>
 		</form>
         <hr>
-
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; <a href="http://gabrielrubens.com.br" target="_blank">Gabriel Rubens</a> 2014</p>
-                </div>
-            </div>
-        </footer>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="idNovoUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					</div>
+					
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="nome">Nome</label> 
+							<input type="text" class="form-control" id="nome" placeholder="Informe o seu nome">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email</label> 
+							<input type="email" class="form-control" id="email" placeholder="Informe o seu email">
+						</div>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" id="btnSalvarUsuario" class="btn btn-success">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
 
     </div>

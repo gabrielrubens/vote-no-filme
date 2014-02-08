@@ -3,13 +3,13 @@
 
 	</div>
 	
-     <div class="footer v-footer">
-              <p>
-              	<a href="http://gabrielrubens.com.br">
-              		Gabriel Rubens | http://gabrielrubens.com.br
-              	</a>
-             </p>
-     </div>
+     <footer>
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <p>Copyright &copy; <a href="http://gabrielrubens.com.br" target="_blank">Gabriel Rubens</a> 2014</p>
+	        </div>
+	    </div>
+	</footer>
       
 	</body>
 </html>
