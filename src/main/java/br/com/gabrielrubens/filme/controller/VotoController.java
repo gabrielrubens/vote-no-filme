@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.view.Results;
 import br.com.gabrielrubens.filme.model.Candidatos;
 import br.com.gabrielrubens.filme.model.Disputa;
 import br.com.gabrielrubens.filme.model.Filme;
@@ -37,16 +38,17 @@ public class VotoController {
 	@Path("/voto/votar")
 	public void votar(Candidatos candidatos, Filme filmeVotado) {
 		repository.votar(new Voto(candidatos, filmeVotado));
-		if(incluirProximoCandidato()){
-			result.redirectTo(this).index();
-		}
+		incluirProximoCandidato();
 	}
 	
-	private boolean incluirProximoCandidato() {
+	private void incluirProximoCandidato() {
 		if(disputa.temCandidatos()){
-			result.include("candidatos", disputa.proximosCandidatos());
-			return true;
+			result.use(Results.json())
+					.from(disputa.proximosCandidatos(), "candidatos")
+					.recursive()
+					.serialize();
+		} else {
+			result.nothing();
 		}
-		return false;
 	}
 }
