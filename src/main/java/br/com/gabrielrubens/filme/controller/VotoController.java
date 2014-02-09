@@ -43,7 +43,7 @@ public class VotoController {
 	
 	private void incluirProximoCandidato() {
 		if(disputa.temCandidatos()){
-			result.use(Results.json())
+			result.use(Results.representation())
 					.from(disputa.proximosCandidatos(), "candidatos")
 					.recursive()
 					.serialize();
