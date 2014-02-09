@@ -36,7 +36,11 @@ public class VotoPage {
 	
 	@Test
 	public void deveVotarEmUmFilme(){
-		voto.votar();
-		//voto.deveApresentarOsCondidatos();
+		voto.votarEmUmFilme();
+	}
+	
+	@Test
+	public void devVotarEmTodosOsFilmesEPreencherUsuario(){
+		voto.votarEmTodosOsFilmes();
 	}
 }
