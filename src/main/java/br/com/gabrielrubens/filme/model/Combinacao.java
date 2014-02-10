@@ -34,9 +34,6 @@ public class Combinacao implements Iterator<Long[]>, Serializable{
 		this.N = 1;
 	}
 
-	public Combinacao() {
-	}
-	
 	/**
 	 * Retorna true quando ha pelo menos uma combinacao disponivel.
 	 */

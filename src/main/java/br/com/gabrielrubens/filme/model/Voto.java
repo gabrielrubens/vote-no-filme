@@ -15,11 +15,14 @@ public class Voto {
 	private final Filme filme2;
 	@ManyToOne
 	private final Filme filmeEscolhido;
+	@ManyToOne
+	private final Usuario usuario;
 	
-	public Voto(Candidatos candidatos, Filme filmeVotado) {
+	public Voto(Candidatos candidatos, Filme filmeVotado, Usuario usuario) {
 		this.filme1 = candidatos.getFilme1();
 		this.filme2 = candidatos.getFilme2();
 		this.filmeEscolhido = filmeVotado;
+		this.usuario = usuario;
 	}
 
 	public Long getId() {
@@ -36,5 +39,9 @@ public class Voto {
 
 	public Filme getFilmeEscolhido() {
 		return filmeEscolhido;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
 	}
 }
