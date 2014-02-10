@@ -4,37 +4,24 @@ var Voto = (function($){
 	app = {
 		votar: function($form, $btn, $filmeVotado) {
 			$filmeVotado.val($($btn).data('filme'));
-			//$form.submit();
 			console.log('app.votar()');
 			$.ajax({
 				type: 'POST',
 				url: 'voto/votar',
 				data: $form.serialize(),
 				success: function(json) {
-					console.log('pronto');
-					console.log(json);
-					//if($('#temCandidatos').val()){
-						_private.preencherNovoVoto(json);
-					/*}else{
-						_private.mostrarOpcaoDeLogin();
-					}*/
+					_private.preencherNovoVoto(json);
 				},
 				error: function (erro){
 					_private.mostrarOpcaoDeLogin();
 				},
 				dataType: 'json'
 			});
-		},
-		
-		ranking: function(){
-			console.log('ranking');
 		}
-	
 	};
 	
 	_private = {
 		preencherNovoVoto: function(json){
-			//$('#')
 			var filme1 = json.candidatos.filme1;
 			var filme2 = json.candidatos.filme2;
 

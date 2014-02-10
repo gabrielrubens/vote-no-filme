@@ -1,4 +1,4 @@
-package br.com.gabrielrubens.filme.repositorio;
+package br.com.gabrielrubens.filme.repository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

@@ -5,7 +5,7 @@
 	});
 
 	$('#btnSalvarUsuario').click(function(){
-		Voto.ranking();
+		Usuario.atualizar();
 	});
 	
 })(jQuery);

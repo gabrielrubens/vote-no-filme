@@ -26,7 +26,7 @@ public class DBUnitHelper {
 	@SuppressWarnings("rawtypes")
 	public static void beforeClass(Class ... clazz) {
 		try {
-			entityManagerFactory = Persistence.createEntityManagerFactory("default");
+			entityManagerFactory = Persistence.createEntityManagerFactory("teste");
 			entityManager = entityManagerFactory.createEntityManager();
 			connection = new DatabaseConnection(((SessionImpl) (entityManager.getDelegate())).connection());
 			connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new HsqldbDataTypeFactory());
