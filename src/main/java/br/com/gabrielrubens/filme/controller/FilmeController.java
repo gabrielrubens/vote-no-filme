@@ -44,9 +44,13 @@ public class FilmeController {
 
 	private List<Filme> criarFilmesParaTeste() {
 		List<Filme> filmes = new ArrayList<>();
-		for(int i=0; i<5; i++){
-			filmes.add(new Filme("Nome " + i));
-		}
+		
+		filmes.add(new Filme("Forrest Gump"));
+		filmes.add(new Filme("Piratas do Vale do Silicio"));
+		filmes.add(new Filme("A Procura da Felicidade"));
+		filmes.add(new Filme("O Auto da Compadecida"));
+		filmes.add(new Filme("Hitch - Conselheiro Amoroso"));
+		
 		return filmes;
 	}
 }

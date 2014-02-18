@@ -35,6 +35,11 @@ public class VotoController {
 
 	@Path(value={ "/", "vote-no-filme"})
 	public void index() {
+		try {
+			disputa.init();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		incluirProximoCandidato();
 	}
 
@@ -53,10 +58,5 @@ public class VotoController {
 		} else {
 			result.nothing();
 		}
-	}
-	
-	@Path("/voto/ranking")
-	public void ranking(){
-		System.out.println("VotoController.ranking()");
 	}
 }

@@ -38,6 +38,11 @@ public class Filme implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	//Se nao fosse o banco em memoria trocaria pelo id ou um hash
+	public String getCapa(){
+		return this.nome.toLowerCase().replaceAll(" ", "");
+	}
+	
 	public String toString() {
 		return "Filme [id=" + id + ", nome=" + nome + "]";
 	}

@@ -25,6 +25,17 @@ public class Voto {
 		this.usuario = usuario;
 	}
 
+	public Voto(Filme filme1, Filme filme2, Filme filmeVotado, Usuario usuario) {
+		this.filme1 = filme1;
+		this.filme2 = filme2;
+		this.filmeEscolhido = filmeVotado;
+		this.usuario = usuario;
+	}
+	
+	public Voto(){
+		this(null, null, null, null);
+	}
+	
 	public Long getId() {
 		return id;
 	}

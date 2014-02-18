@@ -1,6 +1,8 @@
 package br.com.gabrielrubens.filme.model;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -25,7 +27,9 @@ public class Disputa implements Serializable {
 	
 	@PostConstruct
 	public void init() throws Exception {
-		this.combinacao = new Combinacao(filmeRepository.findIds(), 2);
+		List<Long> findIds = filmeRepository.findIds();
+		Collections.shuffle(findIds);
+		this.combinacao = new Combinacao(findIds, 2);
 	}
 	
 	public boolean temCandidatos() {

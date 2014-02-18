@@ -32,6 +32,6 @@ public class UsuarioController {
 		usuarioAtualizar.setNome(usuario.getNome());
 		usuarioAtualizar.setEmail(usuario.getEmail());
 		usuarioRepository.update(usuarioAtualizar);
-		result.redirectTo(VotoController.class).ranking();
+		result.redirectTo(RankingController.class).index();
 	}
 }
