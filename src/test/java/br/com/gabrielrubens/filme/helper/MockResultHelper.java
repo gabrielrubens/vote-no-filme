@@ -1,4 +1,4 @@
-package br.com.gabrielrubens.filme.controller;
+package br.com.gabrielrubens.filme.helper;
 
 import java.util.ArrayList;
 import java.util.List;
