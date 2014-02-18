@@ -1,5 +1,7 @@
 Vote no Filme: 
 =============
+![Build status](https://api.travis-ci.org/gabrielrubens/vote-no-filme.png)
+
 Convenção de commit: Colocar como prefixo logo depois do código da issue ('#123 [TEST] - teste do modelo Bar')
 - [TEST]
 - [IMPL]
