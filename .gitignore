@@ -9,11 +9,12 @@ out
 *.jar
 *.war
 *.ear
-
-
 src/main/webapp/WEB-INF/classes/*
 lib/*
 src/main/webapp/WEB-INF/lib/*
 target/*
 target/**/*
 /bin
+target
+.settings/*
+!.settings/.jsdtscope
