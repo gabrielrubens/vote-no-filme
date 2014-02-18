@@ -27,6 +27,7 @@ public class VotoPage {
 	@AfterClass
 	public static void teardown() {
 		browser.close();
+		browser.quit();
 	}
 	
 	@Test

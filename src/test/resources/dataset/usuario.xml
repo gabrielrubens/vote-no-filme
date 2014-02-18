@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<usuario id="1" nome="Gabriel" email="gabriel@gabriel.com.br" />
+	<usuario id="2" nome="Rubens" email="rubens@gabriel.com.br" />
+</dataset>

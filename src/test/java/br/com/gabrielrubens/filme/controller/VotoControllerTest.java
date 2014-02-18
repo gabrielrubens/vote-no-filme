@@ -18,6 +18,7 @@ import org.mockito.MockitoAnnotations;
 import br.com.caelum.vraptor.interceptor.TypeNameExtractor;
 import br.com.caelum.vraptor.ioc.Container;
 import br.com.caelum.vraptor.util.test.MockSerializationResult;
+import br.com.gabrielrubens.filme.helper.MockResultHelper;
 import br.com.gabrielrubens.filme.model.Candidatos;
 import br.com.gabrielrubens.filme.model.Disputa;
 import br.com.gabrielrubens.filme.model.Filme;

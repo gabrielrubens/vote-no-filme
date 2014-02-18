@@ -1,8 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
 	
-	<voto filme1_id="1" filme2_id="3" filmeEscolhido_id="1" />
-	<voto filme1_id="2" filme2_id="4" filmeEscolhido_id="2" />
-	<voto filme1_id="3" filme2_id="5" filmeEscolhido_id="3" />
-	<voto filme1_id="4" filme2_id="1" filmeEscolhido_id="4" />
+	<voto filme1_id="1" filme2_id="2" filmeEscolhido_id="1" usuario_id="1" />
+	<voto filme1_id="1" filme2_id="3" filmeEscolhido_id="1" usuario_id="1" />
+	<voto filme1_id="1" filme2_id="4" filmeEscolhido_id="1" usuario_id="1" />
+	<voto filme1_id="1" filme2_id="5" filmeEscolhido_id="1" usuario_id="1" />
+	<voto filme1_id="2" filme2_id="3" filmeEscolhido_id="3" usuario_id="1" />
+	<voto filme1_id="2" filme2_id="4" filmeEscolhido_id="4" usuario_id="1" />
+	<voto filme1_id="2" filme2_id="5" filmeEscolhido_id="5" usuario_id="1" />
+	<voto filme1_id="3" filme2_id="4" filmeEscolhido_id="5" usuario_id="1" />
+	<voto filme1_id="3" filme2_id="5" filmeEscolhido_id="3" usuario_id="1" />
+	<voto filme1_id="4" filme2_id="5" filmeEscolhido_id="4" usuario_id="1" />
+	
+	<voto filme1_id="1" filme2_id="2" filmeEscolhido_id="1" usuario_id="2" />
+	<voto filme1_id="1" filme2_id="3" filmeEscolhido_id="1" usuario_id="2" />
+	<voto filme1_id="1" filme2_id="4" filmeEscolhido_id="1" usuario_id="2" />
+	<voto filme1_id="1" filme2_id="5" filmeEscolhido_id="1" usuario_id="2" />
+	<voto filme1_id="2" filme2_id="3" filmeEscolhido_id="3" usuario_id="2" />
+	<voto filme1_id="2" filme2_id="4" filmeEscolhido_id="4" usuario_id="2" />
+	<voto filme1_id="2" filme2_id="5" filmeEscolhido_id="2" usuario_id="2" />
+	<voto filme1_id="3" filme2_id="4" filmeEscolhido_id="5" usuario_id="2" />
+	<voto filme1_id="3" filme2_id="5" filmeEscolhido_id="3" usuario_id="2" />
+	<voto filme1_id="4" filme2_id="5" filmeEscolhido_id="4" usuario_id="2" />
+	
 </dataset>

@@ -17,13 +17,13 @@ public class UsuarioControllerTest {
 		UsuarioSession usuarioSession = mock(UsuarioSession.class);
 		Usuario usuario = new Usuario("Gabriel", "gabriel@gabriel.com.br");
 		UsuarioController controller = new UsuarioController(result, usuarioRepository, usuarioSession);
-		VotoController votoController = mock(VotoController.class);
+		RankingController rankingController = mock(RankingController.class);
 
 		when(usuarioSession.getUsuario()).thenReturn(usuario);
-		when(result.redirectTo(VotoController.class)).thenReturn(votoController);
+		when(result.redirectTo(RankingController.class)).thenReturn(rankingController);
 		
 		controller.atualizar(usuario);
 		
-		verify(votoController, only()).ranking();
+		verify(rankingController, only()).index();
 	}
 }
