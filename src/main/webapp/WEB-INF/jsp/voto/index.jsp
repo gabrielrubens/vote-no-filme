@@ -55,7 +55,7 @@
 					</div>
 				</form>
 				<div class="modal-footer">
-					<button type="button" id="btnSalvarUsuario" class="btn btn-success">Save changes</button>
+					<button type="button" id="btnSalvarUsuario" class="btn btn-success">Enviar</button>
 				</div>
 			</div>
 		</div>
