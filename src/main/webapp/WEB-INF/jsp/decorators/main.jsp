@@ -41,7 +41,7 @@
 	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="${path}">Vote!</a>
+				<a class="navbar-brand" href="${pageContext.request.contextPath}">Vote!</a>
 			</div>
 
 			<!-- /.navbar-collapse -->
