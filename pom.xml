@@ -4,7 +4,7 @@
 
 	<groupId>br.com.gabrielrubens</groupId>
 	<artifactId>vote-no-filme</artifactId>
-	<version>4.0.0-beta-4</version>
+	<version>0.0.1-beta</version>
 	<packaging>war</packaging>
 
 	<description>O melhor lugar para escolher seu filme</description>
@@ -251,4 +251,13 @@
  </build>
 </profile>
     </profiles>
+	<name>Vote no Filmes</name>
+	<organization>
+		<name>Gabriel Rubens</name>
+		<url>http://gabrielrubens.com.br</url>
+	</organization>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/gabrielrubens/vote-no-filme/issues</url>
+	</issueManagement>
 </project>
