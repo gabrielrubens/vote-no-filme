@@ -22,6 +22,7 @@
 <link href="${bootstrap}/css/bootstrap.css" rel="stylesheet">
 <!-- Custom CSS for the 'Thumbnail Gallery' Template -->
 <link href="${bootstrap}/css/2-col-portfolio.css" rel="stylesheet">
+<link href="${cssDir}/application.css" rel="stylesheet">
 <script src="${bootstrap}/js/jquery-1.10.2.js"></script>
 <decorator:head />
 </head>

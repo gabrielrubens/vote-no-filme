@@ -40,6 +40,8 @@ public class FilmeController {
 
 		filmeRepository.insertAll(criarFilmesParaTeste());
 		result.include("mensagem", "Filmes incluidos com sucesso!");
+		
+		result.redirectTo(VotoController.class).index();
 	}
 
 	private List<Filme> criarFilmesParaTeste() {

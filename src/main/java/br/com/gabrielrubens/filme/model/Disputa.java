@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 
+import br.com.gabrielrubens.filme.exception.SemFilmesException;
 import br.com.gabrielrubens.filme.repository.FilmeRepository;
 
 @SessionScoped
@@ -28,7 +29,12 @@ public class Disputa implements Serializable {
 	@PostConstruct
 	public void init() throws Exception {
 		List<Long> findIds = filmeRepository.findIds();
-		Collections.shuffle(findIds);
+		System.out.println("Disputa.init()" + findIds);
+		System.out.println("Disputa.init()" + findIds.isEmpty());
+		if(findIds.isEmpty()){
+			throw new SemFilmesException("Não há filmes cadastrado");
+		}
+			Collections.shuffle(findIds);
 		this.combinacao = new Combinacao(findIds, 2);
 	}
 	

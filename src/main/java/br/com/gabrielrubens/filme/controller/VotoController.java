@@ -38,7 +38,7 @@ public class VotoController {
 		try {
 			disputa.init();
 		} catch (Exception e) {
-			e.printStackTrace();
+			result.redirectTo(this).erro();
 		}
 		incluirProximoCandidato();
 	}
@@ -58,5 +58,9 @@ public class VotoController {
 		} else {
 			result.nothing();
 		}
+	}
+	
+	@Path("/voto/erro")
+	public void erro() {
 	}
 }
