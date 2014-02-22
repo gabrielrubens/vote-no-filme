@@ -8,7 +8,7 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h1 class="page-header">Escolha um filme</h1>
+                <h1 class="page-header"><fmt:message key="msg.escolha.um.filme"/></h1>
             </div>
 
         </div>
@@ -18,14 +18,14 @@
             <div class="col-lg-6 col-md-6 portfolio-item">
                 <img id="idImgFilme1" class="img-responsive img-thumbnail" src="${imgDir}/${candidatos.filme1.capa}.jpg" width="280" height="350">
                 <h3 id="idNmFilme1">${candidatos.filme1.nome}</h3>
-                <button type="button" id="btnFilme1" class="btn btn-success btn-lg" data-filme="${candidatos.filme1.id}">Votar</button>
+                <button type="button" id="btnFilme1" class="btn btn-success btn-lg" data-filme="${candidatos.filme1.id}"><fmt:message key='btn.votar'/></button>
             </div>
 
             <div class="col-lg-6 col-md-6 portfolio-item">
                 <!-- <img id="idImgFilme2" class="img-responsive img-thumbnail" src="http://placehold.it/300x350"> -->
                 <img id="idImgFilme2" class="img-responsive img-thumbnail" src="${imgDir}/${candidatos.filme2.capa}.jpg" width="280" height="350">
                 <h3 id="idNmFilme2">${candidatos.filme2.nome}</h3>
-                <button type="button" id="btnFilme2" class="btn btn-success btn-lg" data-filme="${candidatos.filme2.id}">Votar</button>
+                <button type="button" id="btnFilme2" class="btn btn-success btn-lg" data-filme="${candidatos.filme2.id}"><fmt:message key='btn.votar'/></button>
             </div>
 
         </div>
@@ -38,24 +38,24 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Informe seu nome e e-mail</h4>
-					<h4 class="modal-title" id="myModalLabel">Você não receberá spams :)</h4>
+					<h4 class="modal-title" id="myModalLabel"><fmt:message key='msg.informe.seu.nome.e.email'/>. <fmt:message key='msg.voce.nao.recebera.spams'/></h4>
+					<h4 class="modal-title" id="myModalLabel"></h4>
 					
 				</div>
 				<form id="formUsuarios" action="usuario/atualizar">
 					<div class="modal-body">
 						<div class="form-group">
-							<label for="nome">Nome</label> 
-							<input type="text" class="form-control" id="nome" placeholder="Informe o seu nome">
+							<label for="nome"><fmt:message key='msg.nome'/></label> 
+							<input type="text" class="form-control" id="nome" placeholder="<fmt:message key='msg.informe.seu.nome'/>">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail1">Email</label> 
-							<input type="email" class="form-control" id="email" placeholder="Informe o seu email">
+							<label for="exampleInputEmail1"><fmt:message key='msg.email'/></label> 
+							<input type="email" class="form-control" id="email" placeholder="<fmt:message key='msg.informe.seu.email'/>">
 						</div>
 					</div>
 				</form>
 				<div class="modal-footer">
-					<button type="button" id="btnSalvarUsuario" class="btn btn-success">Enviar</button>
+					<button type="button" id="btnSalvarUsuario" class="btn btn-success"><fmt:message key="btn.enviar"/></button>
 				</div>
 			</div>
 		</div>

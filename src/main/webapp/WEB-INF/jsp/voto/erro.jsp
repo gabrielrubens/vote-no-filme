@@ -3,24 +3,23 @@
     <div class="row">
         <div class="col-md-12">
             <div class="error-template">
-                <h1>
-                    Oops!</h1>
-                <h2>Não há filmes no banco de dados</h2>
-                <h3>NÃO ENTRE EM PÂNICO!</h3>
+                <h1><fmt:message key="erro.oops"/></h1>
+                <h2><fmt:message key='erro.nao.ha.filme.no.banco'/></h2>
+                <h3><fmt:message key='erro.nao.entre.panico'/></h3>
                 <div class="error-details">
-                    Clique no botão "Criar Filmes de Teste" e continue Votando.
+                    <fmt:message key='erro.clique.no.botao.criar.filmes.de.teste'/>
                	</div>
                 <div class="error-details">
-                    Se der tudo OK você será redirecionado para a página inicial.
+                    <fmt:message key='erro.se.der.tudo.ok.voce.sera.redirecionado'/>
                 </div>
                 <div class="error-actions">
                     <a href="/filme/inserirBaseDeTeste" class="btn btn-success btn-lg" id="btnCriarFilmesDeTeste">
                     <span class="glyphicon glyphicon-home"></span>
-                        Criar Filmes de Teste
+                        <fmt:message key='btn.criar.filme.de.teste'/>
                     </a>
-                    <a href="mailto:gabrielrubens@gmail.com?Subject=Melhoria no sistema Vote no Filme" target="_blank" class="btn btn-default btn-lg">
+                    <a href="mailto:gabrielrubens@gmail.com?Subject=<fmt:message key='msg.melhoria.no.sistema'/>" target="_blank" class="btn btn-default btn-lg">
                     	<span class="glyphicon glyphicon-envelope"></span> 
-                    	Entre em contado 
+                    	<fmt:message key='btn.entre.em.contato'/>
                     </a>
                 </div>
             </div>
