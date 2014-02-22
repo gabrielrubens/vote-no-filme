@@ -2,11 +2,11 @@
 
 <div class="row">
 	<div class="col-lg-6 col-md-6 portfolio-item">
-		<h1 class="page-header">Seu Ranking</h1>
+		<h1 class="page-header"><fmt:message key='msg.seu.ranking'/></h1>
 	</div>
 
 	<div class="col-lg-6 col-md-6 portfolio-item">
-		<h1 class="page-header">Ranking Geral</h1>
+		<h1 class="page-header"><fmt:message key='msg.ranking.geral'/></h1>
 	</div>
 </div>
 
@@ -15,8 +15,8 @@
 		<table class="table-striped">
 			<thead>
 				<tr>
-					<th class="col-lg-5">Nome do filme</th>
-					<th class="col-lg-1">Votos</th>
+					<th class="col-lg-5"><fmt:message key='msg.nome.do.filme'/></th>
+					<th class="col-lg-1"><fmt:message key='msg.votos'/></th>
 				</tr>
 			</thead>
 			<tbody id="idTbodyUsuario">
@@ -28,8 +28,8 @@
 		<table class="table-striped">
 			<thead>
 				<tr>
-					<th class="col-lg-5">Nome do filme</th>
-					<th class="col-lg-1">Votos</th>
+					<th class="col-lg-5"><fmt:message key='msg.nome.do.filme'/></th>
+					<th class="col-lg-1"><fmt:message key='msg.votos'/></th>
 				</tr>
 			</thead>
 			<tbody id="idTbodyGeral">
