@@ -35,11 +35,12 @@ public class VotoController {
 
 	@Path(value={ "/", "vote-no-filme"})
 	public void index() {
-		try {
-			disputa.init();
-		} catch (Exception e) {
+		disputa.init();
+		
+		if(!disputa.temCandidatos()){
 			result.redirectTo(this).erro();
 		}
+		
 		incluirProximoCandidato();
 	}
 

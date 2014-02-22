@@ -14,7 +14,7 @@
                     Se der tudo OK você será redirecionado para a página inicial.
                 </div>
                 <div class="error-actions">
-                    <a href="${linkTo[FilmeController].inserirBaseDeTeste}" class="btn btn-success btn-lg" id="btnCriarFilmesDeTeste">
+                    <a href="/filme/inserirBaseDeTeste" class="btn btn-success btn-lg" id="btnCriarFilmesDeTeste">
                     <span class="glyphicon glyphicon-home"></span>
                         Criar Filmes de Teste
                     </a>
