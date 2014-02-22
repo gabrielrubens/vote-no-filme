@@ -10,6 +10,7 @@ Convenção de commit: Colocar como prefixo logo depois do código da issue ('#1
 - [BUGS]
 
 
+Heroku: http://filmeapp.herokuapp.com/
 Hospedagem temporária: http://filme.jelastic.websolute.net.br/, até corrigir #12
 
 --
